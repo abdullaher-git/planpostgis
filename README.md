@@ -1,2 +1,2 @@
 # planpostgis
-Plan Postgis
+Plan XSD To Postgis
