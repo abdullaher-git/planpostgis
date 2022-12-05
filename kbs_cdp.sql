@@ -1,4 +1,3 @@
-
 CREATE SCHEMA  kbs_cdp;
 CREATE TYPE kbs_cdp.TurizmTip AS ENUM ('KisTurizmi','GolfTurizmi','TurizmBolgesi','GunubirlikTurizm','EkoTurizm','SaglikTurizmi','YaylaTurizmi');
 CREATE TYPE kbs_cdp.EgitimTesisTip AS ENUM ();
@@ -556,4 +555,4 @@ CREATE TYPE kbs_cdp.SuYuzeyiTip AS ENUM ('Gol','Golet','Baraj','Deniz');
  "geom" geometry(MultiPolygon,3857) NOT NULL,
  "SuYuzeyiTip" kbs_cdp.SuYuzeyiTip NOT NULL
                 )
-         
+            ;
