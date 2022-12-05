@@ -1,4 +1,3 @@
-
 CREATE SCHEMA  kbs_nip;
 CREATE TYPE kbs_nip.TurizmTip AS ENUM ('GunubirlikTesisAlani','TurizmAlani','GolfTurizmAlani');
 CREATE TYPE kbs_nip.DigerYolNesneTip AS ENUM ('TasitYolu','Refuj','Kaldirim');
