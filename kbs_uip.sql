@@ -32,7 +32,8 @@ CREATE TYPE kbs_uip.IbadetTip AS ENUM ('Cami','Mescit','Kilise','Sapel','Sinagog
 CREATE TYPE kbs_uip.SosyalKulturelTip AS ENUM ('SosyalTesisAlani','KulturelTesisAlani','SefkatEvleriAlani','AcikSporTesisiAlani','KapaliSporTesisiAlani','KresGunduzBakimevi','YurtAlani','KongreSergiMerkeziAlani','YasliBakimeviAlani','SemtSporAlani','OzelSosyalTesisAlani','OzelKulturelTesisAlani','OzelAcikSporTesisiAlani','OzelKapaliSporTesisiAlani');
 CREATE TYPE kbs_uip.AcikYesilTip AS ENUM ('Park','CocukBahcesiOyunAlani','PasifYesilAlan','RekreasyonAlani','FuarPanayirFestivalAlani','MesireYeri','HayvanatBahcesi','Hipodrom','Meydan','BakiSeyirTerasi','KentOrmani','ArboretumBotanikParki','AgaclandirilacakAlan','MezarlikAlani','KorunacakBahce','RekreatifAlan','MilletBahcesi');
 CREATE TYPE kbs_uip.SitTip AS ENUM ('1DereceArkeolojikSit','2DereceArkeolojikSit','3DereceArkeolojikSit','KesinKorunacakHassasAlan','NitelikliDogalKorumaAlani','SurdurulebilirKorumaKontrolluKullanimAlani','KentselSit','TarihiSit','SitEtkilesimAlani','1DereceDogalSit','2DereceDogalSit','3DereceDogalSit');
-CREATE TYPE kbs_uip.HassaslikDerecesi AS ENUM ('OckBolgesiHassasAlanA','OckBolgesiHassasAlanB','OckBolgesiHassasAlanC');CREATE TYPE kbs_uip.TescilTip AS ENUM ('TescilliAnitYapi','TescilliBina','TescilliParsel','TescilliTabiatVarligi');
+CREATE TYPE kbs_uip.HassaslikDerecesi AS ENUM ('OckBolgesiHassasAlanA','OckBolgesiHassasAlanB','OckBolgesiHassasAlanC');
+CREATE TYPE kbs_uip.TescilTip AS ENUM ('TescilliAnitYapi','TescilliBina','TescilliParsel','TescilliTabiatVarligi');
 CREATE TYPE kbs_uip.TarimTip AS ENUM ('Zeytinlik','OrtuAltiTarim','OrganikTarim','TarımsalNitelikliAlan');
 CREATE TYPE kbs_uip.MeraSinif AS ENUM ('CokIyi','Iyi','Orta','Kotu');
 CREATE TYPE kbs_uip.MeraTip AS ENUM ('Mera','Yaylak','Kislak','Cayir','Otlak');
@@ -59,7 +60,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "KonutTip" kbs_uip.KonutTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -70,7 +81,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "TurizmTip" kbs_uip.TurizmTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -82,7 +103,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "MulkiyetTip" kbs_uip.MulkiyetTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -93,7 +124,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "SaglikTip" kbs_uip.SaglikTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -202,7 +243,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "IbadetTip" kbs_uip.IbadetTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -214,7 +265,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "SosyalKulturelTip" kbs_uip.SosyalKulturelTip NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -568,7 +629,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "geom" geometry(MultiPolygon,3857) NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -717,7 +788,17 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "geom" geometry(MultiPolygon,3857) NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
 
@@ -984,17 +1065,16 @@ CREATE TYPE kbs_uip.IlanEdilenCalismaTip AS ENUM ('TeknolojiGelistirmeBolgesi','
  "IlanTarihi" timestamp NOT NULL,
  "OnBahceMesafesi" double precision NOT NULL,
  "YanBahceMesafesi" double precision NOT NULL,
- "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL
+ "YapiDuzeni" kbs_uip.YapiDuzenTip NOT NULL,
+ "Adi" character varying NOT NULL,
+ "EmsalKaks" double precision NOT NULL,
+ "EmsalKaksTip" kbs_uip.DegerTip NOT NULL,
+ "KatAdedi" integer NOT NULL,
+ "MudahaleYontemi" character varying ,
+ "Taks" double precision NOT NULL,
+ "TaksTip" kbs_uip.DegerTip NOT NULL,
+ "YapiYuksekligi" double precision NOT NULL,
+ "YapiYuksekligiTip" kbs_uip.DegerTip NOT NULL,
+ "SembolPoz" character varying
                 )
             ;
-
-            CREATE  TABLE kbs_uip."FeatureCollection"
-                (
-                id SERIAL PRIMARY KEY
-                )
-            ;
-
-            CREATE  TABLE kbs_uip."features"
-                (
-                id SERIAL PRIMARY KEY
-                )
